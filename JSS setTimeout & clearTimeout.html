@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+
+<body>
+   
+    <section class="content">
+        <section class="header">
+            <h2>Tutorial : JavaScript Event</h2>
+            
+        </section>
+        <section class="maincontent">
+      
+         
+            <script>
+                 var timeout;
+                function timeoutTrigger(){
+                    document.getElementById("show").innerHTML="TimeOut Triggered";
+                }
+                function timeInit(){
+                    timeout=setTimeout("timeoutTrigger()",3000);
+                    document.getElementById("show").innerHTML="The timeout has been Started...";
+                }
+                function timeOut(){
+                    clearTimeout(timeout);
+                    document.getElementById("show").innerHTML="Timeout Cleared :)";
+
+                }
+                                    
+                    
+                    ///countdown maker
+                    
+                    var ck=10;
+                    
+                    function startCount(){
+   
+                          if(ck>=0){
+                        document.getElementById("count_").innerHTML=ck;
+                        ck--;
+                            setTimeout("startCount()",1000);
+                            
+                        }
+                        
+                    }
+                
+                function stopCount(){
+                    document.getElementById("count_").innerHTML=ck;
+                    ck=-1;
+                }
+            
+                
+                ////setInterval() clearInterval()
+                
+                var i=0;
+                var x=setInterval(function(){
+                    i++;
+                    alert("Hello Tanver");
+                    if(i==5)clearInterval(x);
+                    
+                },1000)
+                
+                
+            </script>
+            <input type="button" value="Test Timeout" onclick="timeInit()">
+            <input type="button" value="Clear Timeout" onclick="timeOut()">
+            
+            <input type="button" value="Start CountDown" onclick="startCount()">
+            <input type="button" value="Stop CountDown" onclick="stopCount()">
+            
+            
+            <div id="show"></div>
+            <br>
+            <br>
+            <div id ="count_"></div>
+        
+            
+        </section>
+        <footer class="footer">
+            <h2>Training with live projects</h2>
+        </footer>
+        
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+<!--<body onload="alert()">-->
+<body onload="myFunc()"><!--this function will be called when the page is being loaded-->
+   
+    <section class="content">
+        <div class="header">
+            <h2>Tutorial : JavaScript Event</h2>
+            
+        </div>
+        <div class="maincontent">
+           <button onclick ="checkCoding()">Check</button>
+            <button onmouseover="checkOnmouse()">CHeck on mous</button>
+            <button ondblclick="checkDoubleclick()">DoubleClickButton</button>
+            <button onmouseup="OnMouseUp()">onMouseup button </button>  <!--mouse click kore chere dile kaj hobe r mousedown holo click korar sathe sathe fire hobe-->
+            <button onkeydown="onKey()">OnKeyDown</button><!--kono key chape dhorle action fire hobe-->
+            <button onkeyup="onKeyup()">OnKeyUP</button><!--kono key chape chere dile action fire hobe-->
+            <input type="text" onfocus= "inputEvent()"/><!--input text e cursor rakhle action fire hobe-->
+            <input type="text" onblur= "inputEventB()"/><!--input text e cursor rakeh onno jaygay click korle action fire hobe-->
+
+            <script>
+            
+                
+            //    document.write("One and one the great one Tanver Ahmed");
+            
+           function checkCoding(){
+               console.log("ON click event....");
+           }
+           function checkOnmouse(){
+               console.log("On Mouse....");
+           }
+                function onKeyup(){
+                    console.log("On Key up......");
+                }
+                function onKey(){
+                    console.log("On key.......");
+                }
+          function checkDoubleclick(){
+                    console.log("Double click button....");
+           }
+                function OnMouseUp(){
+                    console.log("On Mouse UP buttton clicked.....");
+                }
+                function inputEvent(){
+                    console.log("Focused Event");
+                }
+                 function inputEventB(){
+                    console.log("Blur Event");
+                }
+                function myFunc(){
+                      alert("Page is loaded");
+
+                }
+            </script>
+            
+            
+        </div>
+        <div class="footer">
+            <h2>Training with live projects</h2>
+        </div>
+        
+    </section>
+    
+</body>
+</html>

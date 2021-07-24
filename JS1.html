@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+<body>
+    <section class="content">
+        <div class="header">
+            <h2>Tutorial : JavaScript Fundamentals</h2>
+            
+        </div>
+        <div class="maincontent">
+            
+            <script>
+                
+                document.write("One and one the great one Tanver Ahmed");
+            
+            var myname="<br>Tanver Ahmed";
+            
+          document.write(myname);
+            var a=10,b=5;
+                var sum= a+b;
+                document.write("<br>"+sum);
+            
+                document.write("<br>Functions and variable scopes");
+                var color="red";
+                function fun_one(){
+                    var color="green";
+                  //  <!-- var keyword ta uthay dile  color variable ta global hoye jabeor window.color korleo global hoye jabe-->
+                  //  document.write(color);
+                }
+                
+                fun_one();
+                document.write("<br>"+color);
+           
+            </script>
+            
+           <div id="show">           </div>
+               <script>
+               //display possibities
+/*innerHTML,doucment.write(),window.alert(),console.log() */
+
+                  
+               var a="Tanver Ahmed";
+                   var b="Likhon";
+                   console.time("Check Time");
+                   var name=a+b;
+                   console.log(name);
+                   console.timeEnd("Check Time");
+                   document.getElementById("show").innerHTML=name;   
+                   window.alert("Hello Tanver Ahmed");
+                    
+                   console.log("codeforces.com");
+                   console.info("You have an info");
+                   console.warn("Attention");
+                   console.error("Undefined");
+                   
+// array
+                   document.write("<br><br>Array Starts <br>");
+
+
+                   var arr=[1,2,3,4,5,6];<!--Declaring Array-->
+                   document.write("<br><br>Printing index at 1 ="+arr[1]+"<br>");
+
+console.log("check");
+
+                   var arr1=[6,5,4,3,2,1];
+                   var sumarr=arr.concat(arr1);
+
+                   document.write("<br><br>Printing index at 1 "+arr1[1]+"<br>");
+                   document.write(sumarr);
+                   sumarr.sort();<!--This will sort the array element treating like string-->
+                   document.write("<br>After sorting "+sumarr);
+                   
+                   <!--To sort the array elements like integer-->
+                   var arrr=[10,1030,50,60];
+                   arrr[arrr.length]="6795";
+                   arrr.sort();
+                   document.write("<br>Printing array like string sort is "+arrr+"<br>");
+                   function arraysort(x,y){
+                       return x-y;///for reverse return y-x;
+                   }
+                   arrr.sort(arraysort);
+                   document.write("<br>Printing array like integer sort is- "+arrr+"<br>");
+                   document.write("<br>Length of the array is : "+arrr.length);
+                   arrr.shift();///will remove first element
+                   arrr.unshift(15);//will add element at begin
+                   document.write("<br> printing array after shifting and unshifting <br>")
+                   document.write(arrr);
+                   arrr.pop();//removing last element
+                   arrr.push(45);//inserting element at last
+
+                   document.write("<br><br><br>OBJECT section");
+                   
+                   var n=new String("<br>Tanver Likhon<br>");//converting string to object
+                   var number=new Number(12345);//converting number to object
+                   document.write(typeof(n));
+                   
+                   ///creating object with function
+                   
+                   var person={
+                       first_name:"Tanver Ahmed",
+                       last_name:"Likhon",
+                       age:23,
+                       func:function(){
+                           return this.first_name+this.last_name;
+                       }
+                       
+                   }
+                   
+                   document.write("<br>Object : "+person.func());
+                   document.write("<br>Object properties : "+person.age);
+                   var x=[1,2,3];///it's also an object
+                   var tt=null;//null is also an object
+                   var t;document.write(typeof(t));//will print undefined
+                   
+                   //loop
+                   //for loop
+                   for(i=1;i<=10;i++){
+                       document.write(i);
+                   }
+                   //while loop
+                   var i=1;
+                   while(i<11){
+                       document.write("Tanver Ahmed likhon ");i++;
+                   }
+                   i=0;
+                   //do while loop is also same as c/c++
+                   var color=["Red","Green","Blue","Black"];
+                  // for(i in color){
+                   for(i=0;i<color.length;i++){//alternative way
+                       document.write(color[i]);
+                   }i=0;
+                 var obj={a:1,b:2,c:3};
+                   document.write("<br><br>New line <br>");
+                   for(i in obj){
+                       document.write(i+"- "+obj[i]+" ");//i=a,b,c....
+                   }
+                   
+                   
+                   
+                   
+                
+                   
+               </script>
+               ///input and switch section
+               <input id="codeText" type="text"/>
+               <button onclick="checkCoding()">Check</button>
+               <div id="disp"></div>
+               <script>
+                
+                   function checkCoding(){
+                       var txt;
+                       var coding=document.getElementById("codeText").value;
+                       
+                       //document.write(coding);
+                       
+                       switch(coding){
+                           case "java":
+                              // document.write("Welcome to java :)");
+                               txt="Java";
+                               break;
+                               
+                                case "C++":
+                               txt="C++";
+                               //document.write("Welcome to C++ :)");
+                               break;
+                            case "C#":
+                               txt="C#";
+                               //document.write("Welcome to C# :)");
+                               break;
+                               
+                               case "Python":
+                               txt="Python";
+                             //  document.write("Welcome to Python :)");
+                               break;
+                           default:
+                               txt="Unknown";
+                               //document.write("Unknown");
+                       }
+                       document.getElementById("disp").innerHTML=txt;
+                       
+                   }
+            
+            
+            </script>
+            
+        </div>
+        <div class="footer">
+            <h2>Training with live projects</h2>
+
+        </div>
+        
+    </section>
+    
+</body>
+</html>

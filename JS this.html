@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+
+<body>
+   
+    <section class="content">
+        <section class="header">
+            <h2>Tutorial : JavaScript Event</h2>
+            
+        </section>
+        <section class="maincontent">
+      
+           <div id="tanver" onclick="liveProject(this)">ClickHere</div> <hr/>
+           
+            <script>
+                  function liveProject(event){
+                      alert("EVENT : "+event);
+                      alert(this);
+                  }
+                
+                function liveProjectObj(){
+                    var a=200;///creating local variable
+                    this.x=300;
+                    this.y=400;
+                    this.z=function(){
+                        return this.x+this.y;
+                    }
+                }
+                
+                var obj=new liveProjectObj();
+                document.write(obj.a);//print undefined coz we are trying to acces local variable of the function
+                document.write("<br>X = "+obj.x+"<br> Y "+obj.y);
+                document.write("<br>"+obj.z());
+                
+                //prototypes
+                
+                function sum_(a,b){
+                    this.x=a;
+                    this.y=b;
+                    this.z=function(){
+                        return this.x+this.y;
+                    }
+                }
+                
+                var obj1=new sum_(5,6);
+                document.write("<br>Sum: "+obj1.z())
+                document.write("<br>"+obj1.toString()+"<br>");
+                
+                document.write("<br> Inheritence <br>");
+                
+                function add_(a,b){
+                    this.x=a;this.y=b;
+                    this.sum=function(){
+                        return this.x+this.y;
+                    }
+                    
+                 /*   this.pro=function(){
+                        return 5000;
+                    }
+                    
+                eta use korle ar niche pro function search na kore etai return korbe
+                */
+                }
+                function mul_(a,b){
+                    this.x=a;this.y=b;
+                    this.pro=function(){
+                        return this.x*this.y;
+                    }
+                }
+                
+                add_.prototype= new mul_();///inheritence
+                var OBJ=new add_(5,6);
+                
+                
+                
+                document.write("<br> Calling first obj :"+OBJ.sum());
+                document.write("<br> Calling second obj :"+OBJ.pro());
+                
+                
+                ///PUBLIC AND PRIVATE 
+                
+                function totalNum(a){
+                    //private
+                    x=50;
+                    total=function(){
+                        return x+a;
+                    }
+                
+                    //public 
+                    this.result=function(){
+                        this.sum=total();
+                        return "Result is "+this.sum;
+                    }
+                    
+                }
+                
+                var pp=new totalNum(10);
+                document.write(pp.result());
+                
+                
+                //Static Methods and Properties
+                
+                //skipped
+                
+                
+                
+                
+                
+                
+                
+            </script>
+            
+            
+        </section>
+        <footer class="footer">
+            <h2>Training with live projects</h2>
+        </footer>
+        
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+
+<body>
+   
+    <section class="content">
+        <section class="header">
+            <h2>Tutorial : JavaScript Event</h2>
+            
+        </section>
+        <section class="maincontent">
+            <button onclick="fadeOut()">Start</button>
+            <img src="MeJamiSir.jpg" id="image">
+
+            <script type="text/javascript">
+                
+                var element= document.getElementById("image");
+                var duration=1000;
+                var hidtime=1000;
+                var showtime=1000;
+                
+                function setOpacity(value){
+                    element.style.opacity=value;
+                }
+                
+                function fadeOut(){
+                    for(i=0;i<=1;i+=.01){
+                        setTimeout("setOpacity("+(1-i)+")",i*duration);
+                    }
+                    setTimeout("fadeIn()",(duration+hidtime));
+                }
+                
+                function fadeIn(){
+                    for(i=0;i<=1;i+=0.01){
+                        setTimeout("setOpacity("+i+")",i*duration);
+                    }
+                    setTimeout("fadeOut()",(duration+showtime));
+                    
+                }
+                
+       
+                
+            </script>
+        
+        </section>
+        <footer class="footer">
+            <h2>Training with live projects</h2>
+        </footer>
+        
+    </section>
+    
+</body>
+</html>

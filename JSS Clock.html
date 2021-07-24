@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+
+<body>
+   
+    <section class="content">
+        <section class="header">
+            <h2>Tutorial : JavaScript Event</h2>
+            
+        </section>
+        <section class="maincontent">
+
+            <script>
+                setInterval(clock,1000);
+               function clock(){
+                 var date=new Date();//date and time according to user location
+                    
+                  //  document.write("<br>"+date+"<br><br><br><br>");
+                    
+                    var hour1=date.getHours();
+                    var min1=date.getMinutes();
+                    var sec1=date.getSeconds();
+                    document.getElementById("hour").innerHTML=hour1;
+                    document.getElementById("min").innerHTML=min1;
+                    document.getElementById("sec").innerHTML=sec1;
+                    
+                    //document.write("<br><br><br>");
+                }
+                
+                
+                
+                
+            </script>
+        
+                       <div>
+               <span id="hour"></span>:
+               <span id="min"></span>:
+               <span id="sec"></span>
+               
+           </div>
+        </section>
+        <footer class="footer">
+            <h2>Training with live projects</h2>
+        </footer>
+        
+    </section>
+    
+</body>
+</html>

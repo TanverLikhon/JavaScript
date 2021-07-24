@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptFirstTuto</title>
+    <link rel="stylesheet" href="JS1CSS.css">
+</head>
+
+<body>
+   
+    <section class="content">
+        <section class="header">
+            <h2>Tutorial : JavaScript Event</h2>
+            
+        </section>
+        <section class="maincontent">
+      
+         
+            <script>
+   
+///Way 01
+                
+                
+                function reverseString(str) {
+    // Step 1. Use the split() method to return a new array
+    var splitString = str.split(""); // var splitString = "hello".split("");
+    // ["h", "e", "l", "l", "o"]
+ 
+    // Step 2. Use the reverse() method to reverse the new created array
+    var reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
+    // ["o", "l", "l", "e", "h"]
+ 
+    // Step 3. Use the join() method to join all elements of the array into a string
+    var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
+    // "olleh"
+    
+    //Step 4. Return the reversed string
+    return joinArray; // "olleh"
+                    
+                    
+                    /*
+                    function reverseString(str) {
+                           return str.split("").reverse().join("");
+                    }
+                     reverseString("hello");
+                    All in one
+                    
+                    */
+                    
+                    
+}
+ 
+console.log(reverseString("hello"));
+                
+                
+                ///way 02
+                
+                function reverseString(str) {
+             var newString = "";
+                for (var i = str.length - 1; i >= 0; i--) {
+               newString += str[i];
+             }
+             return newString;
+           }
+           reverseString('hello');
+                
+                
+             ///Way 03   Conditional (Ternary) Operator:
+function reverseString(str) {
+  return (str === '') ? '' : reverseString(str.substr(1)) + str.charAt(0);
+}
+reverseString("hello");
+                
+                
+                var y="We are the best \"players\" in the country";//correct way
+             //   document.getElementById("demo").innerHTML=y;
+                document.write(y);
+             
+                
+                ///indexOf() lastIndexOf()
+                
+                var str="tanver ahmed likhon tanver";
+                var num=[1,2,3,4,5,6,7,8,9,10];
+            var ss=["Red","Green","Yello"];
+                document.write("<br>");
+                
+                document.write(str.indexOf("tanver")+"<br>");
+                document.write(str.lastIndexOf("tanver"));
+                
+                //if not exist then the index will return -1
+                
+                
+                //parseInt(string,radix);
+                
+                /*
+                
+                Definition and Usage
+The parseInt() function parses a string and returns an integer.
+
+The radix parameter is used to specify which numeral system to be used, for example, a radix of 16 (hexadecimal) indicates that the number in the string should be parsed from a hexadecimal number to a decimal number.
+
+If the radix parameter is omitted, JavaScript assumes the following:
+
+If the string begins with "0x", the radix is 16 (hexadecimal)
+If the string begins with "0", the radix is 8 (octal). This feature is deprecated
+If the string begins with any other value, the radix is 10 (decimal)
+Note: Only the first number in the string is returned!
+
+Note: Leading and trailing spaces are allowed.
+
+Note: If the first character cannot be converted to a number, parseInt() returns NaN.
+
+Note: Older browsers will result parseInt("010") as 8, because older versions of ECMAScript, (older than ECMAScript 5, uses the octal radix (8) as default when the string begins with "0". As of ECMAScript 5, the default is the decimal radix (10).
+                
+                */
+                
+                document.write("<br>parseInt()<br>");
+                
+                
+                var a = parseInt("10") + "<br>";
+var b = parseInt("10.00") + "<br>";
+var c = parseInt("10.33") + "<br>";
+var d = parseInt("34 45 66") + "<br>";
+var e = parseInt(" 60 ") + "<br>";
+var f = parseInt("40 years") + "<br>";
+var g = parseInt("He was 40") + "<br>";
+
+var h = parseInt("10", 10)+ "<br>";
+var i = parseInt("010")+ "<br>";
+var j = parseInt("10", 8)+ "<br>";
+var k = parseInt("0x10")+ "<br>";
+var l = parseInt("10", 16)+ "<br>";
+
+var n = a + b + c + d + e + f + g + "<br>" + h + i + j + k +l;
+                
+                document.write("<br>"+n);
+                
+                
+                
+                
+            </script>
+            
+      
+            
+            
+        </section>
+        <footer class="footer">
+            <h2>Training with live projects</h2>
+        </footer>
+        
+    </section>
+    
+</body>
+</html>
